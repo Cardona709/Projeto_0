@@ -1,0 +1,15 @@
+- Dar uma percentagem de erro no numero de objetos identificados
+- Chegar a coordenadas cartesianas
+    -Procurar no SoA modulo de python para fazer esta transformacao/ como e' que a partir de uma imagem consigo fazer isto.
+        -Ideias: transformacao geometrica-> de matrizes de vetores; homografia
+        -Objetivo: Vermos a imagem como se fosse tirada de um satelite (top-down)
+    - Tentar operceber se consigo retirar o angulo da imagem ajudaria no processo
+    - Tentar Chegar a partir da imagem `as distancias (mapear em escala) -> tirar partido de modelos do SoA 
+- Plano SOS: gerar novas imagens a partir das que ja' tenho 
+- Tentar encaixar cada user num tipo de necessidade de trafego (low,medium,high)
+-Alimentar uma LLM com documentos de como atuam os bombeiros-> do genero normalmente estao organizados em grupos e so' um e' que comunica
+- Requisitos por rede mais a sua posicao
+- Numero de utilizadores por carro pode ou nao fazer sentido, provavelmente definir requisitos por carro/camiao
+- Forcar uma posicao com as coordenadas especificas nas imagens
+- Focar um pouco mais nas imagens 
+- Pensar numa formsa de validar os objetios: - Comparar com imagens; validar com o uso de pedidos a humanos 

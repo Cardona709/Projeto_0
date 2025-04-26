@@ -1,0 +1,39 @@
+Firefighter 1 (Jones): “Command, this is Jones. We’re positioned near the collapsed section, just past the red fire truck. Heavy smoke, flames still pushing from the north side.”
+
+Command: “Copy that, Jones. Can you advance, or do you need backup?”
+
+Firefighter 1 (Jones): “Negative on advancing. We need more pressure on the hose line here. We’re barely holding it back.”
+
+Firefighter 2 (Miller): “I’m setting up another line by the alley next to the tall blue building. Should give you some relief soon.”
+
+Firefighter 3 (Davis): “Command, I’m sending a live feed now. You should see the heat signature from the second floor—it’s getting worse.”
+
+Command: “Got it. That section looks unstable. Jones, fall back ten meters—don’t risk it.”
+
+Firefighter 1 (Jones): “Understood. Moving back now.”
+
+Firefighter 2 (Miller): “Water coming your way, brace for pressure surge.”
+
+Firefighter 1 (Jones): “Got it—flow looks good now. Resuming suppression.”
+
+Firefighter 4 (Taylor): “Command, I have eyes on two civilians trapped on the rooftop, southeast corner near the billboard. Smoke’s thick, they won’t last long.”
+
+Command: “Understood. Ladder team, get into position. Air support, what’s your ETA?”
+
+Firefighter 5 (Clark): “Jones, we’re clearing a path to the ladder truck. Can you hold the fire back another few minutes?”
+
+Firefighter 1 (Jones): “Doing our best, but it’s spreading fast. Miller, can you adjust your stream toward the east wall? It might slow the advance.”
+
+Firefighter 2 (Miller): “On it—redirecting now.”
+
+Firefighter 3 (Davis): “Command, the second floor just gave way. No sign of collapse on the west side yet, but we need to move fast.”
+
+Command: “Copy. Rescue team, move in now. Jones, Miller—keep that fire off them.”
+
+Firefighter 1 (Jones): “Understood. Holding the line.”
+
+Firefighter 4 (Taylor): “Ladder’s extended. Civilians are coming down now.”
+
+Firefighter 5 (Clark): “Last civilian is on the ladder. Almost clear.”
+
+Command: “Good work. Everyone, keep suppression efforts going. Let’s bring this thing down.”

@@ -1,0 +1,17 @@
+Firefighter 1 (Lena): "Command, this is Unit 12. We're on scene at the main warehouse, the large blue building with the double doors.  Transmitting a picture of what I just discovered – smoke is billowing from the west side loading dock.  We're seeing heavy smoke and potential flames inside. Intensifying conditions—reinforcements required soon."
+
+Command (Harris): "Unit 12, picture received. We see the smoke.  Lena, can you get closer and give us a live feed? We need to see what's happening inside. Check if my live feed is coming through on your screen."
+
+Firefighter 2 (Carlos): "Command, this is Unit 5. We're at the north parking lot entrance, just past the rows of stacked materials.  We're setting up a staging area.  Transmitting a video I just recorded of the approach – you can see the scale of the incident.  We're going to need more trucks. Uploading the footage I recorded earlier."
+
+Lena: "Command, this is Unit 12. Establishing a live video stream now—stand by for real-time visuals. We're moving towards the loading dock.  I can see flames through a broken window.  We’re entering a hazardous environment, stay alert."
+
+Harris: "Unit 12, live feed coming in.  We see the flames.  It looks like it's spreading fast.  Carlos, how many personnel do you have at the staging area?"
+
+Carlos: "Command, we have about 20 personnel here.  We're going to need more, especially if the fire spreads to the smaller storage buildings adjacent to the main warehouse.  The situation is escalating fast, we’ll need backup soon."
+
+Lena: "Command, this is Unit 12.  We're inside the loading dock.  The fire is spreading rapidly through the racks of materials.  I have a video from a few moments back—sending it through now of the initial flare-up.  We need to evacuate this area. Engaging in a potentially risky operation."
+
+Harris: "Unit 12, evacuate immediately.  Carlos, move your staging area further back, away from the smaller storage buildings.  We're sending additional units now.  Command, we’re facing a critical incident—prepare reinforcements."
+
+Carlos: "Understood, Command. Moving staging area now."

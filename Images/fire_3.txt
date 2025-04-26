@@ -1,0 +1,17 @@
+Command: "Bravo Team, this is Command. We have an updated fire spread map. The perimeter has shifted, and we're losing containment on the northern ridge. Move in to reinforce. Keep messages concise—radio traffic is high."
+
+Firefighter 1 (Jordan): "Copy, Command. Moving in from the west access road. Heavy smoke is cutting visibility. Bandwidth is stretched—need only priority updates."
+
+Firefighter 2 (Evans): "Jordan, I’m near the highway bridge, close to the containment post. Fire’s encroaching fast. If you need aerial support, request ASAP—satellite link is lagging."
+
+Air Support (Delta 4): "Command, Delta 4 here. We’ve got three tankers inbound, ETA two minutes. Need ground units to confirm drop zones. Large data packets coming in—network congestion might slow telemetry updates."
+
+Command: "Acknowledged, Delta 4. Ground teams, confirm drop zones fast—satellite imagery refresh is delayed due to bandwidth strain."
+
+Firefighter 3 (Lopez): "I'm positioned near the eastern containment fence, close to the blue warehouse. We're deploying high-volume pumps. Live video feed is choppy—might need to switch to lower resolution to maintain connection."
+
+Firefighter 4 (Reyes): "Lopez, water pressure dropping on our end. Can you confirm flow rate? Packet loss is affecting telemetry—we may need to resend data manually."
+
+Firefighter 3 (Lopez): "Checking now. Network is under heavy load—might take a few seconds. Switching to voice-only to free up throughput."
+
+Command: "Teams, stay sharp. Winds are shifting again, pushing the fire toward civilian structures. Priority messages only—reduce non-essential data usage to keep the channel clear."

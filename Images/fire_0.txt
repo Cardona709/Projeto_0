@@ -1,0 +1,22 @@
+Unit 4 (-53, -139): “Command, we’re on scene. Fire is advancing rapidly along the ridge, embers spotting ahead. We have multiple ignition points.”
+
+Command (215,-397): “Copy, Unit 4. Any civilian structures threatened?”
+
+Unit 4 (-53, -139): “Affirmative. One residential structure in direct path—estimating 10 minutes before it’s compromised.”
+
+Command (215,-397): “Understood. Can you provide visuals?”
+
+Unit 4 (-53, -139): “Starting a live feed now—let me know if the resolution is clear enough for assessment.”
+
+Command (215,-397): “Receiving. There’s heavy smoke interference—reduce resolution if needed to keep the feed stable.”
+
+Unit 4 (-53, -139): “Copy. Adjusting settings now. Stand by for a clearer transmission.”
+
+Unit 4 (-53, -139): “This fire is jumping containment lines. Wind shift detected. We’re going to need additional units on our flank.”
+
+Command (215,-397): “Understood. Reinforcements en route. Keep me updated on conditions.”
+Hazardous Condition Alert
+
+Unit 4 (-53, -139): “Command, be advised—partial structural collapse near our position. Unsafe for entry.”
+
+Command (215,-397): “Acknowledged. Do not proceed inside. Maintain perimeter control and await further orders.”

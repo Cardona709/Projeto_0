@@ -1,0 +1,29 @@
+Command: “All units, this is Command. Be advised, the fire has jumped the ridge and is spreading rapidly eastward. Maintain firebreaks and report status. Keep transmissions brief—radio traffic is heavy.”
+
+Firefighter 1 (Reyes): “Copy, Command. Visibility dropping near the bend in the road, close to Engine 7. Heavy embers. Need additional support—over.”
+
+Firefighter 2 (Henderson): “Reyes, I’m 50 meters north of you near the fallen pine, setting up a water line. Bandwidth is tight—keep it short.”
+
+Air Support (Bravo 2): “Command, Bravo 2 here. We’ve got a tanker drop lined up along the leading edge, west of the main road. Releasing retardant in 30 seconds. Need airspace clear.”
+
+Command: “Copy, Bravo 2. All ground units, hold position—avoid the drop zone. Reyes, confirm receipt.”
+
+Firefighter 1 (Reyes): “Received. Moving back to a safer position. Radio’s getting choppy, keeping transmissions minimal.”
+
+Firefighter 3 (Taylor): “Command, embers are igniting new spot fires near the dirt trail behind our line. Requesting a second unit to contain before it spreads uphill.”
+
+Firefighter 4 (Nguyen): “I’m on it! Advancing up the slope with Squad 5. Keeping comms tight, over.”
+
+Firefighter 5 (Clark): “Command, the wind just shifted—fire’s pushing toward the highway. More units needed ASAP. Priority transmission—acknowledge.”
+
+Command: “Acknowledged. Engine 9 and 12, reroute to Clark’s position. Keep it brief—radio congestion is high.”
+
+Air Support (Bravo 2): “Confirmed, retardant drop complete. Fire is still moving south toward the parked vehicles. We’ll do another pass in three minutes.”
+
+Firefighter 6 (Lopez): “Reyes, watch out—flames are creeping toward your left! Urgent!”
+
+Firefighter 1 (Reyes): “I see it! Pulling back. Henderson, we need that water line now—make it count!”
+
+Firefighter 2 (Henderson): “Water’s up! Directing stream to cut the spread. Bandwidth’s critical—sticking to essentials.”
+
+Command: “Stay on it, teams. Hold the line until the next aerial drop. Keep traffic clear for priority messages. Move fast and stay safe.”
