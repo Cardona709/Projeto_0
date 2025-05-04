@@ -1,0 +1,180 @@
+Prompt:
+
+            You are a network engineer responsible for analyzing the feed you received from a drone and identify the needs of the users in the network.
+            The image was pre-processed to identify the objects in the image and their coordinates. 
+            Your role here is to analyze the detected objects and infer the needs of the users in the network. The output must be the throughput need per user in the network and a justification for this need.
+            For example, if a object or a group of objects are very close to a fire, one can infer that those users need a more reliable connection and might need to be prioritized and more probably need to transmit heavy data, such as streaming a video or an image.
+            If the user in question does not appear to be in a througput demainding situation, then the user can be classified as low or medium throughput need, and the justification for this classification can be just a simple sentence, like "the user is not in a througput demanding situation" or "the user is not in a fire situation". 
+            One example of this not througput demanding situation is when the user is not on a iminent dangerous situation like a support firetruck  that is further away from the fire, or a user that is not in a fire situation at all.
+            Also you are given a .txt file under the name "object_coordinates.txt" that contains the coordinates of the objects detected in the image, which are also present in the image.
+            In the end replace all the entrys of airplane, truck or car by two identical entries with a new label, "person" and all the other fields replicated.
+            The output must be a JSON object with the following schema, this must be replicated for each user in the image:
+            {
+                total_users: 1, # the total number of users in the image, can more easily be obtained from the object_coordinates.txt file
+                "user": [
+                    {
+                        "label": "user_label", # this label can be found in the object_coordinates.txt file and is corresponding to the coordinates associated with the user
+                        "x": 0.0, # the x coordinate of the user in the image, that his associated with the label
+                        "y": 0.0, # the y coordinate of the user in the image, that his associated with the label
+                        "throughput_need": "high", # the throughput need of the user, can be "high", "medium" or "low"
+                        "througput_justification": "the justification of the throughput need of the user, can be "high", "medium" or "low"
+                        "throughput_example_value": 100.0
+                    }
+                ]
+            }         
+        
+
+Response:
+```json
+{
+    "total_users": 18,
+    "user": [
+        {
+            "label": "person",
+            "x": -103.0,
+            "y": 336.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in aerial vehicle: Actively involved in aerial observation/firefighting operations near the fire zone, likely requires real-time data transmission (video, sensor data).",
+            "throughput_example_value": 100.0
+        },
+        {
+            "label": "person",
+            "x": -103.0,
+            "y": 336.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in aerial vehicle: Actively involved in aerial observation/firefighting operations near the fire zone, likely requires real-time data transmission (video, sensor data).",
+            "throughput_example_value": 100.0
+        },
+        {
+            "label": "person",
+            "x": -2.0,
+            "y": -419.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle: Likely part of the response convoy but further from the immediate fire front, primarily needs coordination data.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "person",
+            "x": -2.0,
+            "y": -419.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle: Likely part of the response convoy but further from the immediate fire front, primarily needs coordination data.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "person",
+            "x": 292.0,
+            "y": -255.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in vehicle: Operating near an active fire area, potentially involved in direct response or close observation, requiring reliable communication and possibly data transmission.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": 292.0,
+            "y": -255.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in vehicle: Operating near an active fire area, potentially involved in direct response or close observation, requiring reliable communication and possibly data transmission.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": -283.0,
+            "y": -368.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck): Likely a support or staging firetruck, part of the response but not positioned at the most intense fire edge shown. Requires coordination comms.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": -283.0,
+            "y": -368.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck): Likely a support or staging firetruck, part of the response but not positioned at the most intense fire edge shown. Requires coordination comms.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": 373.0,
+            "y": -271.0,
+            "throughput_need": "high",
+            "througput_justification": "User is on the ground in close proximity to an active fire, likely requiring critical communications, potentially transmitting images/video or receiving real-time updates.",
+            "throughput_example_value": 75.0
+        },
+        {
+            "label": "person",
+            "x": 215.0,
+            "y": -397.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle: Part of the response convoy but further from the immediate fire front shown. Requires standard coordination communication.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "person",
+            "x": 215.0,
+            "y": -397.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle: Part of the response convoy but further from the immediate fire front shown. Requires standard coordination communication.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "person",
+            "x": 15.0,
+            "y": -320.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in vehicle: Positioned relatively close to an active fire area around the bend, likely requires reliable communication for coordination or observation.",
+            "throughput_example_value": 40.0
+        },
+        {
+            "label": "person",
+            "x": 15.0,
+            "y": -320.0,
+            "throughput_need": "high",
+            "througput_justification": "Inferred user in vehicle: Positioned relatively close to an active fire area around the bend, likely requires reliable communication for coordination or observation.",
+            "throughput_example_value": 40.0
+        },
+        {
+            "label": "person",
+            "x": 92.0,
+            "y": -377.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck/car): Support vehicle in the convoy, requires coordination comms but not at the immediate fire front.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": 92.0,
+            "y": -377.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck/car): Support vehicle in the convoy, requires coordination comms but not at the immediate fire front.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": -176.0,
+            "y": -387.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck): Support firetruck in the convoy, requires coordination comms but not at the immediate fire front.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": -176.0,
+            "y": -387.0,
+            "throughput_need": "medium",
+            "througput_justification": "Inferred user in vehicle (truck): Support firetruck in the convoy, requires coordination comms but not at the immediate fire front.",
+            "throughput_example_value": 25.0
+        },
+        {
+            "label": "person",
+            "x": -53.0,
+            "y": -139.0,
+            "throughput_need": "high",
+            "througput_justification": "User is on the ground within an active fire zone near structures, likely a firefighter requiring critical communications and potentially data transfer for situational awareness.",
+            "throughput_example_value": 80.0
+        }
+    ]
+}
+```
+
+======================================================================================================

@@ -1,0 +1,45 @@
+Prompt: You are a network engineer responsible for analyzing the feed you received from a drone and identify the needs of the users in the network.
+            The image was pre-processed to identify the objects in the image and their coordinates. 
+            Your role here is to analyze the detected objects and infer the needs of the users in the network. The output must be the throughput need per user in the network.
+            For example, if a object or a group of objects are near a fire, one can infer that those users need a more reliable connection and might need to be prioritized and more probably need to transmit heavy data, such as streaming a video or an image.
+            Also you are given a .txt file under the name "object_coordinates.txt" that contains the coordinates of the objects detected in the image, which are also present in the image.
+            The output must be a JSON object with the following schema:        
+
+Response: "Okay, analyzing the drone feed and the detected objects in the context of a wildfire emergency:
+
+**Scene Analysis:**
+
+The image shows a significant wildfire spreading across hilly terrain near a coast. There is substantial smoke, and flames are visible along the hillsides and near a winding road. Several emergency response units are present.
+
+**Detected Objects and Inferred User Needs:**
+
+1.  **Helicopter (`airplane` at -103, 336):**
+    *   **Role:** Likely involved in aerial reconnaissance, providing situational awareness (live video feed), potentially water drops, or coordinating ground units.
+    *   **Network Need:** **High Uplink Throughput** required to stream real-time, high-definition video and sensor data (e.g., thermal imaging) back to a command center or ground crews. Medium downlink throughput needed for receiving instructions, flight plans, and updated maps. Low latency is critical for effective coordination.
+
+2.  **Emergency Vehicles (`truck` / `car` objects along the road, e.g., -283,-368; -176,-387; 92,-377; 215,-397; 15,-320; -2,-419; 292,-255):**
+    *   **Role:** These appear to be fire engines and support vehicles, likely engaged in direct firefighting, setting up containment lines, or staging for deployment. Crews are operating these vehicles.
+    *   **Network Need:** **Medium Uplink and Downlink Throughput.** Needs include reliable voice communication (lower throughput but latency-sensitive), receiving incident maps, command instructions, weather updates, and potentially transmitting status updates, local video snippets, or sensor data (e.g., vehicle location, water levels). Reliability is paramount. Aggregate throughput from multiple vehicles could be substantial.
+
+3.  **Personnel (`person` objects, e.g., -53,-139; 36,-157; 373,-271):**
+    *   **Role:** Firefighters on the ground, likely assessing the fire, operating hoses, or coordinating actions near the vehicles and fire line.
+    *   **Network Need:** **Low to Medium Throughput.** Primarily need reliable, low-latency voice communications (radio or cellular). May need downlink for receiving instructions or map snippets on handheld devices. Potential for uplink if using bodycams or transmitting location/biometric data (medium throughput if video is involved).
+
+4.  **Building (Box near -250, -250, inferred from context):**
+    *   **Role:** Its proximity to the fire and emergency vehicles suggests it might be a structure under threat, a temporary staging point, or contain residents/personnel needing communication.
+    *   **Network Need:** Variable. If used as a temporary command post or shelter, it could require **Medium to High Throughput** for data access, communication coordination, and receiving video feeds. If simply a structure under threat, the *need* is associated with the responders protecting it.
+
+**Overall Network Throughput Requirements:**
+
+The network needs to support a demanding mix of traffic, characterized by:
+
+1.  **High Aggregate Uplink Demand:** Driven primarily by the helicopter's video feed, and potentially supplemented by vehicle/personnel data.
+2.  **Medium Aggregate Downlink Demand:** For distributing maps, instructions, and potentially sharing video feeds among units.
+3.  **Critical Reliability and Low Latency:** Essential for voice communications and real-time coordination during a life-threatening emergency.
+4.  **Prioritization:** Emergency traffic from these identified users must be prioritized over any non-essential traffic in the area.
+
+**Conclusion:** The primary network challenge in this scenario is providing robust, high-throughput *uplink* capacity, particularly for the aerial asset, while ensuring reliable, low-latency communication for all ground units and personnel. The overall throughput requirement is **High**, with a strong emphasis on uplink performance and network reliability.
+
+
+=================================================================================================================================
+=================================================================================================================================

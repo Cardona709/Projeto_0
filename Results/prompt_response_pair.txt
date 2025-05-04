@@ -1,0 +1,359 @@
+Prompt:
+
+            You are a network engineer responsible for analyzing the feed you received from a drone and identify the needs of the users in the network.
+            The image was pre-processed to identify the objects in the image and their coordinates. 
+            Your role here is to analyze the detected objects and infer the needs of the users in the network. The output must be the throughput need per user in the network.
+            For example, if a object or a group of objects are near a fire, one can infer that those users need a more reliable connection and might need to be prioritized and more probably need to transmit heavy data, such as streaming a video or an image.
+            If the user in question does not appear to be in a througput demainding situation, then the user can be classified as low or medium throughput need, and the justification for this classification can be just a simple sentence, like "the user is not in a througput demanding situation" or "the user is not in a fire situation".
+            Also you are given a .txt file under the name "object_coordinates.txt" that contains the coordinates of the objects detected in the image, which are also present in the image.
+            The output must be a JSON object with the following schema, this must be replicated for each user in the image:
+            {
+                total_users: 1, # the total number of users in the image, can more easily be obtained from the object_coordinates.txt file
+                "user": [
+                    {
+                        "label": "user_label", # this label can be found in the object_coordinates.txt file and is corresponding to the coordinates associated with the user
+                        "x": 0.0, # the x coordinate of the user in the image, that his associated with the label
+                        "y": 0.0, # the y coordinate of the user in the image, that his associated with the label
+                        "throughput_need": "high", # the throughput need of the user, can be "high", "medium" or "low"
+                        "througput_justification": "the justification of the throughput need of the user, can be "high", "medium" or "low"
+                        "throughput_example_value": 100.0
+                    }
+                ]
+            }         
+        
+
+Response:
+```json
+{
+    "total_users": 11,
+    "user": [
+        {
+            "label": "airplane",
+            "x": -103,
+            "y": 336,
+            "throughput_need": "high",
+            "througput_justification": "The helicopter is likely involved in reconnaissance, coordination, or water dropping, requiring high throughput for video streaming, sensor data, and communication.",
+            "throughput_example_value": 100.0
+        },
+        {
+            "label": "car",
+            "x": -2,
+            "y": -419,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle, likely a fire engine or support vehicle, is positioned on the road near active fire zones, indicating involvement in the response requiring reliable communication and data exchange.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "car",
+            "x": 292,
+            "y": -255,
+            "throughput_need": "medium",
+            "througput_justification": "This vehicle is on the road but appears further from the main cluster of activity and intense fire, potentially indicating a support role or staging, requiring moderate throughput.",
+            "throughput_example_value": 10.0
+        },
+        {
+            "label": "truck",
+            "x": -283,
+            "y": -368,
+            "throughput_need": "high",
+            "througput_justification": "This fire truck is part of the convoy directly responding to the fire, requiring high throughput for coordination and situational awareness data.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": 373,
+            "y": -271,
+            "throughput_need": "high",
+            "througput_justification": "This person is on the ground near the road and potentially close to the fire line, likely a firefighter requiring critical communication and real-time data.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "car",
+            "x": 215,
+            "y": -397,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle, likely a fire engine or support vehicle, is on the road near active fire zones, indicating involvement in the response requiring reliable communication and data exchange.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "car",
+            "x": 15,
+            "y": -320,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle, likely a fire engine or support vehicle, is positioned on the road near active fire zones, indicating involvement in the response requiring reliable communication and data exchange.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "car",
+            "x": 92,
+            "y": -377,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle (also identified as a truck) is part of the response convoy near the fire, requiring high throughput for coordination.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "truck",
+            "x": 92,
+            "y": -377,
+            "throughput_need": "high",
+            "througput_justification": "This fire truck (also identified as a car) is actively involved in the response near the fire, requiring high throughput for coordination and data.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "truck",
+            "x": -176,
+            "y": -387,
+            "throughput_need": "high",
+            "througput_justification": "This fire truck is part of the convoy directly responding to the fire, requiring high throughput for coordination and situational awareness data.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": -53,
+            "y": -139,
+            "throughput_need": "high",
+            "througput_justification": "This person is on the ground near a structure and close to the fire/smoke, likely a firefighter in a critical position requiring reliable communication and data.",
+            "throughput_example_value": 20.0
+        }
+    ]
+}
+```
+
+======================================================================================================
+Prompt:
+
+            You are a network engineer responsible for analyzing the feed you received from a drone and identify the needs of the users in the network.
+            The image was pre-processed to identify the objects in the image and their coordinates. 
+            Your role here is to analyze the detected objects and infer the needs of the users in the network. The output must be the throughput need per user in the network.
+            For example, if a object or a group of objects are very close to a fire, one can infer that those users need a more reliable connection and might need to be prioritized and more probably need to transmit heavy data, such as streaming a video or an image.
+            If the user in question does not appear to be in a througput demainding situation, then the user can be classified as low or medium throughput need, and the justification for this classification can be just a simple sentence, like "the user is not in a througput demanding situation" or "the user is not in a fire situation".
+            Also you are given a .txt file under the name "object_coordinates.txt" that contains the coordinates of the objects detected in the image, which are also present in the image.
+            The output must be a JSON object with the following schema, this must be replicated for each user in the image:
+            {
+                total_users: 1, # the total number of users in the image, can more easily be obtained from the object_coordinates.txt file
+                "user": [
+                    {
+                        "label": "user_label", # this label can be found in the object_coordinates.txt file and is corresponding to the coordinates associated with the user
+                        "x": 0.0, # the x coordinate of the user in the image, that his associated with the label
+                        "y": 0.0, # the y coordinate of the user in the image, that his associated with the label
+                        "throughput_need": "high", # the throughput need of the user, can be "high", "medium" or "low"
+                        "througput_justification": "the justification of the throughput need of the user, can be "high", "medium" or "low"
+                        "throughput_example_value": 100.0
+                    }
+                ]
+            }         
+        
+
+Response:
+```json
+{
+    "total_users": 10,
+    "user": [
+        {
+            "label": "airplane",
+            "x": -103,
+            "y": 336,
+            "throughput_need": "high",
+            "througput_justification": "This is likely a helicopter involved in aerial observation or water drops for the wildfire. It requires high throughput for real-time video streaming, sensor data transmission, and critical communications with ground crews.",
+            "throughput_example_value": 100.0
+        },
+        {
+            "label": "car",
+            "x": -2,
+            "y": -419,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle appears to be a fire truck or emergency response vehicle based on context (red color, location). It is part of the convoy heading towards or operating near the active fire line, requiring high throughput for coordination, data sharing (maps, situational awareness), and potentially video.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "car",
+            "x": 292,
+            "y": -255,
+            "throughput_need": "medium",
+            "througput_justification": "This car is located on the road near the fire but seems slightly separated from the main convoy and closer to a less intense fire area. It could be support personnel or law enforcement. Medium throughput is needed for reliable communication and occasional data transfer.",
+            "throughput_example_value": 20.0
+        },
+        {
+            "label": "truck",
+            "x": -283,
+            "y": -368,
+            "throughput_need": "high",
+            "througput_justification": "This is clearly a fire truck within the main response group on the road, positioned near significant fire activity. High throughput is essential for critical communications, command and control data, and sharing real-time information.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": 373,
+            "y": -271,
+            "throughput_need": "medium",
+            "througput_justification": "This person is on the ground near the road and the fire edge. Likely a firefighter or spotter. Requires reliable communication (voice, text) and potentially medium throughput for sending images or short video clips for assessment.",
+            "throughput_example_value": 10.0
+        },
+        {
+            "label": "car",
+            "x": 215,
+            "y": -397,
+            "throughput_need": "high",
+            "througput_justification": "This vehicle appears to be another fire truck or emergency response vehicle in the convoy, close to the fire. High throughput is required for operational coordination and data exchange.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "car",
+            "x": 15,
+            "y": -320,
+            "throughput_need": "high",
+            "througput_justification": "Another likely fire/emergency vehicle in the response group, situated on the road near active fire. High throughput needed for critical mission communications and data.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "truck",
+            "x": 92,
+            "y": -377,
+            "throughput_need": "high",
+            "througput_justification": "This is identified as a truck (likely fire truck) in the convoy near the fire. Requires high throughput for coordination, receiving instructions, and sending status updates.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "truck",
+            "x": -176,
+            "y": -387,
+            "throughput_need": "high",
+            "througput_justification": "A fire truck within the convoy, located near significant fire activity. High throughput is crucial for safety and operational effectiveness.",
+            "throughput_example_value": 50.0
+        },
+        {
+            "label": "person",
+            "x": -53,
+            "y": -139,
+            "throughput_need": "medium",
+            "througput_justification": "This person is on the hillside near a structure and active fire, potentially part of a ground crew. Requires reliable communication and medium throughput for status reports, image sharing, or accessing tactical maps.",
+            "throughput_example_value": 15.0
+        }
+    ]
+}
+```
+
+======================================================================================================
+Prompt:
+
+            You are a network engineer responsible for analyzing the feed you received from a drone and identify the needs of the users in the network.
+            The image was pre-processed to identify the objects in the image and their coordinates. 
+            Your role here is to analyze the detected objects and infer the needs of the users in the network. The output must be the throughput need per user in the network.
+            For example, if a object or a group of objects are very close to a fire, one can infer that those users need a more reliable connection and might need to be prioritized and more probably need to transmit heavy data, such as streaming a video or an image.
+            If the user in question does not appear to be in a througput demainding situation, then the user can be classified as low or medium throughput need, and the justification for this classification can be just a simple sentence, like "the user is not in a througput demanding situation" or "the user is not in a fire situation". 
+            One example of this not througput demanding situation is when the user is not on a iminent dangerous situation like a support firetruck  that is further away from the fire, or a user that is not in a fire situation at all.
+            Also you are given a .txt file under the name "object_coordinates.txt" that contains the coordinates of the objects detected in the image, which are also present in the image.
+            The output must be a JSON object with the following schema, this must be replicated for each user in the image:
+            {
+                total_users: 1, # the total number of users in the image, can more easily be obtained from the object_coordinates.txt file
+                "user": [
+                    {
+                        "label": "user_label", # this label can be found in the object_coordinates.txt file and is corresponding to the coordinates associated with the user
+                        "x": 0.0, # the x coordinate of the user in the image, that his associated with the label
+                        "y": 0.0, # the y coordinate of the user in the image, that his associated with the label
+                        "throughput_need": "high", # the throughput need of the user, can be "high", "medium" or "low"
+                        "througput_justification": "the justification of the throughput need of the user, can be "high", "medium" or "low"
+                        "throughput_example_value": 100.0
+                    }
+                ]
+            }         
+        
+
+Response:
+```json
+{
+    "total_users": 11,
+    "user": [
+        {
+            "label": "airplane",
+            "x": -103,
+            "y": 336,
+            "throughput_need": "high",
+            "througput_justification": "Helicopter likely performing aerial reconnaissance or water drops over an active fire zone, requiring reliable, high-bandwidth communication for video streaming and coordination.",
+            "throughput_example_value": 10.0
+        },
+        {
+            "label": "car",
+            "x": -2,
+            "y": -419,
+            "throughput_need": "high",
+            "througput_justification": "Emergency vehicle part of a convoy positioned very close to the active fire line, likely needing reliable communication for coordination and potentially transmitting situational data.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "car",
+            "x": 292,
+            "y": -255,
+            "throughput_need": "medium",
+            "througput_justification": "Vehicle located on the road near the fire zone, but further from the main convoy and most intense fire compared to others. Likely support or personnel transport, moderate bandwidth needed.",
+            "throughput_example_value": 1.0
+        },
+        {
+            "label": "truck",
+            "x": -283,
+            "y": -368,
+            "throughput_need": "high",
+            "througput_justification": "Fire truck in the main convoy, positioned directly adjacent to other units and near active fire lines. Requires high priority, reliable communication for command and control.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "person",
+            "x": 373,
+            "y": -271,
+            "throughput_need": "high",
+            "througput_justification": "Person on the ground near the roadside fire activity, potentially a firefighter or supervisor coordinating efforts. Requires reliable communication for safety and coordination.",
+            "throughput_example_value": 2.0
+        },
+        {
+            "label": "car",
+            "x": 215,
+            "y": -397,
+            "throughput_need": "high",
+            "througput_justification": "Vehicle within the main cluster of emergency response units on the road, close to active fire. Requires reliable communication for coordination.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "car",
+            "x": 15,
+            "y": -320,
+            "throughput_need": "high",
+            "througput_justification": "Vehicle positioned on the road within the active fire response zone, potentially staging or involved in operations. Requires reliable communication.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "car",
+            "x": 92,
+            "y": -377,
+            "throughput_need": "high",
+            "througput_justification": "Emergency vehicle (likely part of a fire truck) in the main convoy near active fire. Requires high priority communication.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "truck",
+            "x": 92,
+            "y": -377,
+            "throughput_need": "high",
+            "througput_justification": "Fire truck in the main convoy positioned near active fire lines. Requires high priority, reliable communication for command and control.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "truck",
+            "x": -176,
+            "y": -387,
+            "throughput_need": "high",
+            "througput_justification": "Fire truck in the main convoy, positioned near active fire lines. Requires high priority, reliable communication for command and control.",
+            "throughput_example_value": 5.0
+        },
+        {
+            "label": "person",
+            "x": -53,
+            "y": -139,
+            "throughput_need": "medium",
+            "througput_justification": "Person located near a structure and terraced area where fire activity seems lower. Potentially involved in assessment or mop-up. Reliable communication needed, but perhaps less data-intensive than frontline units.",
+            "throughput_example_value": 1.0
+        }
+    ]
+}
+```
+
+======================================================================================================
