@@ -1,0 +1,31 @@
+Prompt:
+
+         You are supervisioning a network in a disaster scenario, and you have access to comunications made by the firefighters in these scenario, additionaly you have access to the coordinates of all the firefighters
+         Verify if with the conversation you can infere the network needs of the firefighters, and if so, provide a the needs of that firefighter (high, medium, low) and the respective coordinates of the firefighter
+        
+
+Response:
+Okay, let's analyze the communication log to infer network needs.
+
+Based on the conversation:
+
+1.  **Unit 4 (-53, -139):**
+    *   **Activities:** On scene at an active, rapidly advancing fire, reporting critical conditions (fire behavior, ember spotting, multiple ignitions), identifying immediate threats (structure), **providing a live video feed** (high bandwidth uplink requirement), reporting significant escalations (containment jump, wind shift, structural collapse), requesting resources, and receiving orders.
+    *   **Inference:** This unit is heavily reliant on the network for multiple critical functions simultaneously: reliable voice communication for urgent reports and requests, and high-bandwidth, stable data transmission for the live video feed requested by Command for assessment. The dynamic and hazardous nature of their situation requires constant, reliable connectivity.
+    *   **Network Need:** **High**
+    *   **Coordinates:** (-53, -139)
+
+2.  **Command (215, -397):**
+    *   **Activities:** Receiving critical field reports, requesting further information, **requesting and receiving a live video feed** (high bandwidth downlink requirement) for situational assessment, acknowledging urgent updates, coordinating resources (dispatching reinforcements), and issuing safety orders.
+    *   **Inference:** Command needs reliable voice communication to manage the incident and direct units. Crucially, they also require sufficient bandwidth and stability to receive and view the live video feed from Unit 4, which is essential for their decision-making process regarding the threatened structure and overall strategy.
+    *   **Network Need:** **High**
+    *   **Coordinates:** (215, -397)
+
+**Summary:**
+
+Yes, the conversation allows us to infer network needs. Both units require high network performance due to the critical nature of the voice communications and the added demand of live video streaming/receiving for real-time situational awareness and decision-making in a hazardous, rapidly evolving incident.
+
+*   **Unit 4 (-53, -139): High** (Reliable voice + High uplink bandwidth for video streaming)
+*   **Command (215, -397): High** (Reliable voice + High downlink bandwidth for video receiving and assessment)
+
+======================================================================================================
